@@ -1,13 +1,13 @@
 package com.bassemsaleh.flashchatnewfirebase;
 
 public class InstantMessage {
-    String message;
-    String author;
+    private String message;
+    private String author;
 
     public InstantMessage() {
     }
 
-    public InstantMessage(String message, String author) {
+    public InstantMessage(String author, String message) {
         this.message = message;
         this.author = author;
     }

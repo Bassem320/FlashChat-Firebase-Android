@@ -2,10 +2,12 @@ package com.bassemsaleh.flashchatnewfirebase;
 
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -17,6 +19,7 @@ public class MainChatActivity extends AppCompatActivity {
 
     // TODO: Add member variables here:
     private String mDisplayName;
+    private ChatListAdapter mAdapter;
     private ListView mChatListView;
     private EditText mInputText;
     private ImageButton mSendButton;
@@ -37,7 +40,13 @@ public class MainChatActivity extends AppCompatActivity {
         mChatListView = (ListView) findViewById(R.id.chat_list_view);
 
         // TODO: Send the message when the "enter" button is pressed
-
+        mInputText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
+            @Override
+            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+                sendMessage();
+                return true;
+            }
+        });
         // TODO: Add an OnClickListener to the sendButton to send a message
         mSendButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,9 +78,16 @@ public class MainChatActivity extends AppCompatActivity {
 
 
     @Override
+    protected void onStart() {
+        super.onStart();
+        mAdapter = new ChatListAdapter(this,mDatabaseReference,mDisplayName);
+        mChatListView.setAdapter(mAdapter);
+    }
+
+    @Override
     public void onStop() {
         super.onStop();
-
+        mAdapter.cleanUp();
         // TODO: Remove the Firebase event listener on the adapter.
 
     }
