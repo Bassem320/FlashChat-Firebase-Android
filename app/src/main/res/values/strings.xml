@@ -18,4 +18,7 @@
         completions."
     </string>
     <string name="sample_message">Hello!</string>
+    <string name="error_register">Registeration Failed\n this email may be registered</string>
+    <string name="close_dialog">OK</string>
+    <string name="error_title">Oops</string>
 </resources>
