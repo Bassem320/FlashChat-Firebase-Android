@@ -8,7 +8,7 @@
               android:paddingRight="@dimen/activity_horizontal_margin"
               android:paddingTop="@dimen/activity_vertical_margin"
               android:background="@drawable/background_welcome_min"
-              tools:context="com.londonappbrewery.flashchatnewfirebase.LoginActivity"
+              tools:context="com.bassemsaleh.flashchatnewfirebase.LoginActivity"
               android:gravity="bottom">
 
 
@@ -60,25 +60,23 @@
     <Button
         android:id="@+id/login_sign_in_button"
         style="?android:textAppearanceMedium"
-        android:background="@color/green"
-        android:textColor="@color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:onClick="signInExistingUser"
+        android:background="@color/green"
         android:text="@string/action_sign_in_short"
-        android:textStyle="bold"/>
+        android:textColor="@color/white"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/login_register_button"
         style="?android:textAppearanceMedium"
-        android:background="@color/white"
-        android:textColor="@color/green"
-        android:onClick="registerNewUser"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
+        android:background="@color/white"
         android:text="@string/action_register"
-        android:textStyle="bold"/>
+        android:textColor="@color/green"
+        android:textStyle="bold" />
 
 </LinearLayout>

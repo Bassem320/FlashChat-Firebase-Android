@@ -1,18 +1,12 @@
-package com.londonappbrewery.flashchatnewfirebase;
+package com.bassemsaleh.flashchatnewfirebase;
 
-import android.content.SharedPreferences;
-import android.database.DataSetObserver;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
-import android.view.KeyEvent;
 import android.view.View;
-import android.view.inputmethod.EditorInfo;
-import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ListView;
-import android.widget.TextView;
 
+import androidx.appcompat.app.AppCompatActivity;
 
 
 public class MainChatActivity extends AppCompatActivity {
@@ -37,7 +31,12 @@ public class MainChatActivity extends AppCompatActivity {
         mChatListView = (ListView) findViewById(R.id.chat_list_view);
 
         // TODO: Send the message when the "enter" button is pressed
-
+        mSendButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendMessage();
+            }
+        });
 
         // TODO: Add an OnClickListener to the sendButton to send a message
 
