@@ -21,4 +21,5 @@
     <string name="error_register">Registeration Failed\n this email may be registered</string>
     <string name="close_dialog">OK</string>
     <string name="error_title">Oops</string>
+    <string name="sign_in_failed">Wrong Email or Password</string>
 </resources>
