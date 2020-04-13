@@ -109,7 +109,7 @@ public class ChatListAdapter extends BaseAdapter {
         }else{
             holder.params.gravity = Gravity.START;
             holder.authorName.setTextColor(Color.BLUE);
-            holder.authorName.setTextColor(Color.BLUE);
+            holder.body.setTextColor(Color.BLUE);
             holder.body.setBackgroundResource(R.drawable.bubble1);
         }
         holder.authorName.setLayoutParams(holder.params);
